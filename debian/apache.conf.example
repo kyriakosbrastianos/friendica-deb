@@ -1,0 +1,38 @@
+There are several ways to setup friendica and Apache in Debian. For
+compatibility with Diaspora it should be configured such, that it is
+available in the base of your domain or a separate sub-domain. If you
+do not need connectibility with Diaspora you can install friendica in
+a subdirectory of your web content as well.
+
+The maintainer's therefore recommend the following setup. For alternative
+approaches see below.
+
+## Virtual host
+
+    NameVirtualHost *:80
+    <VirtualHost *:80>
+        UseCanonicalName    Off
+        DocumentRoot /usr/share/friendica/www/
+        Options All
+        AllowOverride all
+        # ServerAdmin admin@example.com
+    </VirtualHost>
+
+## Friendica in a subdomain
+
+	NameVirtualHost *:80
+
+	<VirtualHost *:80>
+		VirtualDocumentRoot /usr/share/friendica/www/
+		ServerName friendica.example.com
+		ErrorLog /var/log/apache2/friendica-error.log
+		Options All
+   	AllowOverride all
+   	# ServerAdmin admin@example.com
+	</VirtualHost>
+
+## Friendica in a sub-directory
+link /usr/shaer/friendica/www to /srv/www/friendica and add location
+block to your server config to allow Override
+
+

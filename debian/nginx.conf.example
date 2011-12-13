@@ -1,0 +1,40 @@
+For a basic nginx configuration that works with friendica Keith Fernie
+has made the following available.
+
+	server {
+		listen 80;
+   	server_name example.comi;
+ 		root /usr/share/friendica/web;
+		index index.php;
+		
+ 		location = /favicon.ico {
+			log_not_found off;
+ 			access_log off;
+		}
+
+		location = /robots.txt {
+			allow all;
+			log_not_found off;
+			access_log off;
+		}
+
+		location ~ \.php$ {
+			fastcgi_split_path_info ^(.+\.php)(/.+)$;
+			#NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+			include /etc/nginx/fastcgi_params;
+			fastcgi_intercept_errors on;
+			fastcgi_pass unix:/var/run/php5-fpm.sock;
+		}
+
+		location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+			expires max;
+			log_not_found off;
+		}
+
+		if (!-e $request_filename){
+ 			rewrite ^(.*)$ /index.php?q=$1 last;
+		}
+		location / {
+			try_files $uri $uri/ /index.php;
+		}
+	}

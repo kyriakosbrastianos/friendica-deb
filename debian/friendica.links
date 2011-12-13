@@ -1,0 +1,3 @@
+etc/friendica/htaccess usr/share/friendica/www/.htaccess
+etc/friendica/htconfig.php usr/share/friendica/www/.htconfig.php
+usr/share/friendica/include usr/share/friendica/www/include

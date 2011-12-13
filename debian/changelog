@@ -1,0 +1,5 @@
+friendica (2.37-1) unstable; urgency=low
+
+  * Initial release (Closes: #651944)
+
+ -- Tobias Diekershoff <tobias.diekershoff@gmx.net>  Tue, 13 Dec 2011 18:05:13 +0100

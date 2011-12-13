@@ -1,0 +1,15 @@
+mod/ usr/share/friendica/www
+util/ usr/shrae/friendica/www
+view/ usr/share/friendica/www
+include/ usr/share/friendica
+images/ usr/share/friendica/www
+library/ usr/share/friendica/www
+doc/ usr/share/friendica/www
+js/ usr/share/friendica/www
+.htaccess etc/friendica
+htconfig.php etc/friendica
+boot.php usr/share/friendica/www 
+index.php usr/share/friendica/www 
+testargs.php usr/share/friendica/www 
+database.sql usr/share/friendica/www 
+update.php usr/share/friendica/www 

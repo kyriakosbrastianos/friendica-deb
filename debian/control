@@ -1,0 +1,26 @@
+Source: friendica
+Section: web
+Priority: optional
+Maintainer: Tobias Diekershoff <tobias.diekershoff@gmx.net>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: http://friendica.com
+Vcs-Git: git://git.debian.org/collab-maint/friendica.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/friendica.git;a=summary
+
+Package: friendica
+Architecture: any
+Depends: ${misc:Depends}
+Recommends: apache2 | httpd,
+         mysql-client,
+         libapache2-mod-php5 | php5,
+         php5-mysql,
+         php5-gd,
+         php5-imap
+Description: friendica is a PHP/MySQL based decentral social network platform
+ What if social networks were more like email? What if they were all
+ inter-connected, and you could choose which software (and even which
+ provider) to use based purely on what they offered you - in terms of
+ features and perhaps privacy?
+ .
+ Now they are! Friendica is bringing them all together.
